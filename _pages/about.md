@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: "Quantum phenomena do not occur in a Hilbert space. They occur in a laboratory.” ― Asher Peres
 
 profile:
   align: right
