@@ -14,18 +14,18 @@
       year: 2022 - present
       description:
         - Advised by Professor Vivishek Sudhir
-        - GPA 5.0/5.0
+        - GPA: 5.0/5.0
     - title: MS
       institution: The University of Tokyo, Tokyo, Japan
       year: 2016 - 2018
       description:
         - Advised by Professor Shoji Takeuchi
-        - GPA 3.93/4.0
+        - GPA: 3.93/4.0
     - title: BS
       institution: Tokyo Institute of Technology, Tokyo, Japan
       year: 2013 - 2016
       description:
-        - GPA 3.96/4.0, Summa Cum Laude in 3.5 years
+        - GPA: 3.96/4.0, Summa Cum Laude in 3.5 years
 
 - title: Experience
   type: time_table
@@ -37,17 +37,17 @@
         - Quantum Precision & Measurements Group
         - title: Main Projects
           contents:
-            - Quantum-noise-limited optical lever readout of angular displacement
-            - Measurement-based feedback cooling of macroscopic torsion pendulum
+            - Quantum-noise-limited optical lever readout
+            - Feedback cooling of macroscopic oscillators
     - title: Research Associate (military duty)
       institution: Korea Advanced Institute of Science & Technology, South Korea
       year: 2018 - 2022
       description:
-        - Advised by Professor Seung-Woo Kim and Professor Young-Jin Kim
+        - Advised by Prof. Seung-Woo Kim and Prof. Young-Jin Kim
         - title: Main Projects
           contents:
-            - Control and stabilization of optical frequency combs with $$10^{–15}$$ instability
-            - Phase-coherent optical-to-terahertz down-conversion
+            - Stabilization of optical frequency combs
+            - Optical-to-terahertz down-conversion
             - Frequency-comb-referenced plasmonic spectroscopy
 
 - title: Honors and Awards
