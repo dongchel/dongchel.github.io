@@ -14,18 +14,17 @@
       year: 2022 - present
       description:
         - Advised by Professor Vivishek Sudhir
-        - GPA\U+2236 5.0/5.0
+        - GPA  5.0/5.0
     - title: MS
       institution: The University of Tokyo, Tokyo, Japan
       year: 2016 - 2018
       description:
         - Advised by Professor Shoji Takeuchi
-        - GPA\U+2236 3.93/4.0
     - title: BS
       institution: Tokyo Institute of Technology, Tokyo, Japan
       year: 2013 - 2016
       description:
-        - GPA\U+2236 3.96/4.0, Summa Cum Laude in 3.5 years
+        - Summa Cum Laude in 3.5 years
 
 - title: Experience
   type: time_table
