@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Passed the MechE Qualifying Exams.
+Passed the MechE Qualifying Exams
