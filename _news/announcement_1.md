@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Comb-rooted THz paper has now ben published in Nature Communications!
+Comb-rooted THz paper has now been published in Nature Communications!
