@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Have been selected to receive a 24-25 MechE MathWorks Engineering Fellowship
+Received a MechE MathWorks Engineering Fellowship
