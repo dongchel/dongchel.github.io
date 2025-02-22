@@ -51,12 +51,15 @@
 - title: Honors and Awards
   type: time_table
   contents:
+    - year: 2024
+      items: 
+        - MathWorks Engineering Fellowship, Mathworks
+    - year: 2017
+      items: 
+        - Hatakeyama Award, The Japan Society of Mechanical Engineers (JSME), JAPAN
     - year: 2016
       items: 
         - Kwanjeong Educational Foundation Scholarship
     - year: 2012
       items: 
         - Korea-Japan Joint Government Scholarship Program
-    - year: 2017
-      items: 
-        - Hatakeyama Award, The Japan Society of Mechanical Engineers (JSME), JAPAN
