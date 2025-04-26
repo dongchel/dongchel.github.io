@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-(Paper) Work on laser cooling of a torsional oscillator has been published in Optica [[link](https://opg.optica.org/optica/fulltext.cfm?uri=optica-12-4-473&id=569884)]
+Work on laser cooling of a torsional oscillator has been published in Optica [[link](https://opg.optica.org/optica/fulltext.cfm?uri=optica-12-4-473&id=569884)]

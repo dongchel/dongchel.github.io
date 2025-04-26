@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-(Award) Awarded the 2024 MathWorks Engineering Fellowship
+Awarded the 2024 MathWorks Engineering Fellowship

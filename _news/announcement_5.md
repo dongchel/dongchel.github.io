@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-(Conference) Presented laser coolingw work in 2025 APS March meeting
+Attended the 2025 APS March meeting

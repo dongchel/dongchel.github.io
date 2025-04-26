@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Presented a poster at the 2024 GRC Mechanical Systems in the Quantum Regime
+Attended the 2024 GRC Mechanical Systems in the Quantum Regime

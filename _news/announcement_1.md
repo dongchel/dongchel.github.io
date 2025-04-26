@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-(Paper) Work on THz synthesis using ultastable combs has been published in Nature Communications. [[link](https://www.nature.com/articles/s41467-023-36507-y)]
+Work on Comb-rooted THz synthesis has been published in Nature Communications. [[link](https://www.nature.com/articles/s41467-023-36507-y)]
