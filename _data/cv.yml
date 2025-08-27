@@ -6,60 +6,60 @@
     - name: Languages
       value: English, Japanese, Korean (native)
 
-- title: Education
-  type: time_table
-  contents:
-    - title: PhD
-      institution: Massachusetts Institute of Technology, MA, USA
-      year: 2022 - present
-      description:
-        - Advised by Professor Vivishek Sudhir
-    - title: MS
-      institution: The University of Tokyo, Tokyo, Japan
-      year: 2016 - 2018
-      description:
-        - Advised by Professor Shoji Takeuchi
-    - title: BS
-      institution: Tokyo Institute of Technology, Tokyo, Japan
-      year: 2013 - 2016
-      description:
-        - Summa Cum Laude in 3.5 years
+# - title: Education
+#   type: time_table
+#   contents:
+#     - title: PhD
+#       institution: Massachusetts Institute of Technology, MA, USA
+#       year: 2022 - present
+#       description:
+#         - Advised by Professor Vivishek Sudhir
+#     - title: MS
+#       institution: The University of Tokyo, Tokyo, Japan
+#       year: 2016 - 2018
+#       description:
+#         - Advised by Professor Shoji Takeuchi
+#     - title: BS
+#       institution: Tokyo Institute of Technology, Tokyo, Japan
+#       year: 2013 - 2016
+#       description:
+#         - Summa Cum Laude in 3.5 years
 
-- title: Experience
-  type: time_table
-  contents:
-    - title: Graduate Research Assistant
-      institution: Massachusetts Institute of Technology, MA, USA
-      year: 2022 - present
-      description:
-        - Quantum Precision & Measurements Group
-        - title: Main Projects
-          contents:
-            - Quantum-noise-limited optical lever readout
-            - Feedback cooling of macroscopic oscillators
-    - title: Research Associate (military duty)
-      institution: Korea Advanced Institute of Science & Technology, South Korea
-      year: 2018 - 2022
-      description:
-        - Advised by Prof. Seung-Woo Kim and Prof. Young-Jin Kim
-        - title: Main Projects
-          contents:
-            - Stabilization of optical frequency combs
-            - Optical-to-terahertz down-conversion
-            - Frequency-comb-referenced plasmonic spectroscopy
+# - title: Experience
+#   type: time_table
+#   contents:
+#     - title: Graduate Research Assistant
+#       institution: Massachusetts Institute of Technology, MA, USA
+#       year: 2022 - present
+#       description:
+#         - Quantum Precision & Measurements Group
+#         - title: Main Projects
+#           contents:
+#             - Quantum-noise-limited optical lever readout
+#             - Feedback cooling of macroscopic oscillators
+#     - title: Research Associate (military duty)
+#       institution: Korea Advanced Institute of Science & Technology, South Korea
+#       year: 2018 - 2022
+#       description:
+#         - Advised by Prof. Seung-Woo Kim and Prof. Young-Jin Kim
+#         - title: Main Projects
+#           contents:
+#             - Stabilization of optical frequency combs
+#             - Optical-to-terahertz down-conversion
+#             - Frequency-comb-referenced plasmonic spectroscopy
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 2024
-      items: 
-        - MathWorks Engineering Fellowship, Mathworks
-    - year: 2017
-      items: 
-        - Hatakeyama Award, The Japan Society of Mechanical Engineers (JSME), JAPAN
-    - year: 2016
-      items: 
-        - Kwanjeong Educational Foundation Scholarship
-    - year: 2012
-      items: 
-        - Korea-Japan Joint Government Scholarship Program
+# - title: Honors and Awards
+#   type: time_table
+#   contents:
+#     - year: 2024
+#       items: 
+#         - MathWorks Engineering Fellowship, Mathworks
+#     - year: 2017
+#       items: 
+#         - Hatakeyama Award, The Japan Society of Mechanical Engineers (JSME), JAPAN
+#     - year: 2016
+#       items: 
+#         - Kwanjeong Educational Foundation Scholarship
+#     - year: 2012
+#       items: 
+#         - Korea-Japan Joint Government Scholarship Program
