@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Work on laser cooling of a torsional oscillator has been published in Optica [[link](https://opg.optica.org/optica/fulltext.cfm?uri=optica-12-4-473&id=569884)] [[MIT News](https://news.mit.edu/2025/is-gravity-quantum-0520)].
+(Paper) Laser cooling of a torsional oscillator appeared in Optica [[link](https://opg.optica.org/optica/fulltext.cfm?uri=optica-12-4-473&id=569884)]. Check out [MIT News](https://news.mit.edu/2025/is-gravity-quantum-0520).

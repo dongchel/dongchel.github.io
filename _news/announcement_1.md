@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Work on Comb-rooted THz synthesis has been published in Nature Communications. [[link](https://www.nature.com/articles/s41467-023-36507-y)]
+(Paper) Ultra-stable THz synthesis in Nature Communications. [[link](https://www.nature.com/articles/s41467-023-36507-y)]
