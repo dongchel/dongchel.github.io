@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Attended the 2025 APS March meeting.
+(Conference) Attended the 2025 APS March meeting.

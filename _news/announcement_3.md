@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Attended the 2024 GRC Mechanical Systems in the Quantum Regime.
+(Conference) Attended the 2024 GRC Mechanical Systems in the Quantum Regime.
