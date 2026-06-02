@@ -2,6 +2,13 @@
  * Styles for the base elements of the theme.
  ******************************************************************************/
 
+// Adjust the overall site content width (Bootstrap default caps .container at 1140px).
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
 // Typography
 
 p,

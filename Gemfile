@@ -1,4 +1,9 @@
 source 'https://rubygems.org'
+# Ruby 3.5+/4.0 removed these from the default gems; pin them explicitly
+gem 'ostruct'
+gem 'logger'
+gem 'csv'
+gem 'base64'
 group :jekyll_plugins do
     gem 'classifier-reborn'
     gem 'jekyll'
