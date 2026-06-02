@@ -1,8 +1,3 @@
-<style>
-  h2.year {
-    display: none !important;
-  }
-</style>
 ---
 ---
 <!-- _layouts/bib.html -->
@@ -35,7 +30,7 @@
         {%- endif -%}
 
         <!-- Entry bib key -->
-        <div id="{{entry.key}}" class="{% if site.enable_publication_thumbnails %}col-sm-7{% else %}col-sm-10{% endif %}">
+        <div id="{{entry.key}}" class="{% if site.enable_publication_thumbnails %}col-sm-9{% else %}col-sm-12{% endif %}">
         <!-- Title -->
         <div class="title">{{entry.title}}</div>
         <!-- Author -->
