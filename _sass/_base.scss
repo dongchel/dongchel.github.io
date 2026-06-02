@@ -645,11 +645,13 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
+    // Hide the large faded year heading (kept as a divider only)
+    font-size: 0;
     color: var(--global-divider-color);
     border-top: 1px solid var(--global-divider-color);
-    padding-top: 1rem;
+    padding-top: 0;
     margin-top: 2rem;
-    margin-bottom: -2rem;
+    margin-bottom: 1rem;
     text-align: right;
   }
 
