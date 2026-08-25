@@ -50,9 +50,25 @@
   let ox = 0, oy = 0, scale = 60;
 
   function layout() {
-    ox = w * 0.62;
-    oy = h * 0.56;
-    scale = Math.min(w, h) * 0.16;
+    if (w < 720) {
+      // narrow screens: the text column runs full-width, so there's no
+      // clear space beside it. Place the trajectory in the reserved band
+      // below the CTA buttons instead of overlapping the copy.
+      const actions = document.querySelector(".hero-actions");
+      const wrapRect = wrap.getBoundingClientRect();
+      let actionsBottom = h * 0.55; // fallback if not found yet
+      if (actions) {
+        const ar = actions.getBoundingClientRect();
+        actionsBottom = ar.bottom - wrapRect.top;
+      }
+      scale = Math.min(w, 260) * 0.095;
+      ox = w * 0.5;
+      oy = actionsBottom + scale * 2.9;
+    } else {
+      ox = w * 0.62;
+      oy = h * 0.56;
+      scale = Math.min(w, h) * 0.16;
+    }
   }
 
   // ---- mouse: proximity gently "pokes" the oscillator ----
