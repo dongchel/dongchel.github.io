@@ -11,8 +11,16 @@
 //
 // Text fields support light markdown:
 //   **bold**      -> <b>bold</b>        (use for your own name in authors)
-//   *italic*      -> <em>italic</em>
+//   _italic_      -> <em>italic</em>
 //   [text](url)   -> link that opens in a new tab
+//   ^*^           -> superscript *      (put right after an author's name)
+//   ^dagger^      -> superscript †      (co-first author marker)
+//
+// Author order is "Initials Family" (e.g. "D.-C. Shin"), separated by commas.
+// Mark a corresponding author with ^*^ and a co-first author with ^dagger^
+// right after their name, e.g. "Y.-J. Kim^*^" or "G. Kang^dagger^". A legend
+// explaining the marks is shown automatically under the author list whenever
+// at least one author on that paper uses one — no need to add it by hand.
 //
 // After editing, just save — no build step, refresh the page to see it.
 // ---------------------------------------------------------------
@@ -21,7 +29,7 @@ const NEWS = [
   {
     date: "2026-05-10",
     tag: "Paper",
-    body: "Comb-to-comb synchronization appeared in *Optics & Laser Technology*. [Read it →](https://www.sciencedirect.com/science/article/abs/pii/S0030399226008777)"
+    body: "Comb-to-comb synchronization appeared in _Optics & Laser Technology_. [Read it →](https://www.sciencedirect.com/science/article/abs/pii/S0030399226008777)"
   },
   {
     date: "2025-08-23",
@@ -36,7 +44,7 @@ const NEWS = [
   {
     date: "2025-04-01",
     tag: "Paper",
-    body: "Laser cooling of a torsional oscillator appeared in *Optica*. [Paper](https://opg.optica.org/optica/fulltext.cfm?uri=optica-12-4-473&id=569884) · [MIT News](https://news.mit.edu/2025/is-gravity-quantum-0520)"
+    body: "Laser cooling of a torsional oscillator appeared in _Optica_. [Paper](https://opg.optica.org/optica/fulltext.cfm?uri=optica-12-4-473&id=569884) · [MIT News](https://news.mit.edu/2025/is-gravity-quantum-0520)"
   },
   {
     date: "2025-03-20",
@@ -56,7 +64,7 @@ const NEWS = [
   {
     date: "2023-02-11",
     tag: "Paper",
-    body: "Ultra-stable THz synthesis appeared in *Nature Communications*. [Read it →](https://www.nature.com/articles/s41467-023-36507-y)"
+    body: "Ultra-stable THz synthesis appeared in _Nature Communications_. [Read it →](https://www.nature.com/articles/s41467-023-36507-y)"
   },
 ];
 
@@ -65,7 +73,7 @@ const PUBLICATIONS = [
     year: 2026,
     venue: "Nature Communications",
     title: "Nanometre-precision terahertz interferometry for battery electrode metrology",
-    authors: "Kang, G., Kim, J., Kim, M.-R., Lee, Y., **Shin, D.**, Jeon, J., Kim, H., Kim, D. H., Lee, J., Park, S., Kim, Y.-J.",
+    authors: "G. Kang, J. Kim, M.-R. Kim, Y. Lee, **D.-C. Shin**, J. Jeon, H. Kim, D. H. Kim, J. Lee, S. Park, Y.-J. Kim",
     preview: "assets/img/publication_preview/battery.png",
     links: [
       { label: "Paper", url: "https://www.nature.com/articles/s41467-026-74193-8" },
@@ -77,7 +85,7 @@ const PUBLICATIONS = [
     year: 2026,
     venue: "Optics & Laser Technology",
     title: "Compact, robust all-fiber platform for 1-Hz-linewidth synchronization of optical frequency combs using single comb line extraction",
-    authors: "**Shin, D.**, Yang, J., Lee, D. I., Kang, G., Kim, S.-W., Kim, Y.-J.",
+    authors: "**D.-C. Shin**, J. Yang, D. I. Lee, G. Kang, S.-W. Kim, Y.-J. Kim",
     preview: "assets/img/publication_preview/comb-to-comb.png",
     links: [
       { label: "Paper", url: "https://www.sciencedirect.com/science/article/abs/pii/S0030399226008777" },
@@ -89,7 +97,7 @@ const PUBLICATIONS = [
     year: 2026,
     venue: "arXiv preprint",
     title: "Continuum-field quantum optics of frequency comb metrology",
-    authors: "**Shin, D.**, Ng, E., Suh, M.-G., Sudhir, V.",
+    authors: "**D.-C. Shin**, E. Ng, M.-G. Suh, V. Sudhir",
     preview: "assets/img/publication_preview/quantum-comb.png",
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2605.16702" },
@@ -101,7 +109,7 @@ const PUBLICATIONS = [
     year: 2025,
     venue: "Optica",
     title: "Active laser cooling of a centimeter-scale torsional oscillator",
-    authors: "**Shin, D.**, Hayward, T. M., Fife, D., Menon, R., Sudhir, V.",
+    authors: "**D.-C. Shin**, T. M. Hayward, D. Fife, R. Menon, V. Sudhir",
     preview: "assets/img/publication_preview/laser2025.png",
     links: [
       { label: "Paper", url: "https://doi.org/10.1364/OPTICA.548098" },
@@ -112,7 +120,7 @@ const PUBLICATIONS = [
     year: 2024,
     venue: "Review of Scientific Instruments",
     title: "Temperature stabilization of a lab space at 10 mK-level over a day",
-    authors: "Fife, D., **Shin, D.**, Sudhir, V.",
+    authors: "D. Fife, **D.-C. Shin**, V. Sudhir",
     preview: "assets/img/publication_preview/temp.png",
     links: [
       { label: "Paper", url: "https://doi.org/10.1063/5.0213133" },
@@ -123,7 +131,7 @@ const PUBLICATIONS = [
     year: 2024,
     venue: "PhotoniX",
     title: "Real-time monitoring of fast gas dynamics with a single-molecule resolution by frequency-comb-referenced plasmonic phase spectroscopy",
-    authors: "Nguyen, D.-A., Kim, D. H., Lee, G. H., Kim, S., **Shin, D.**, Park, J., Choi, H.-J., Kim, S.-W., Kim, S., Kim, Y.-J.",
+    authors: "D.-A. Nguyen, D. H. Kim, G. H. Lee, S. Kim, **D.-C. Shin**, J. Park, H.-J. Choi, S.-W. Kim, S. Kim, Y.-J. Kim",
     preview: "assets/img/publication_preview/photonix2024.png",
     links: [
       { label: "Paper", url: "https://photonix.springeropen.com/articles/10.1186/s43074-024-00140-9" },
@@ -134,7 +142,7 @@ const PUBLICATIONS = [
     year: 2023,
     venue: "Nature Communications",
     title: "Photonic comb-rooted synthesis of ultra-stable terahertz frequencies",
-    authors: "**Shin, D.**, Kim, B. S., Jang, H., Kim, Y.-J., Kim, S.-W.",
+    authors: "**D.-C. Shin**, B. S. Kim, H. Jang, Y.-J. Kim, S.-W. Kim",
     preview: "assets/img/publication_preview/ncomm2023.png",
     links: [
       { label: "Paper", url: "https://doi.org/10.1038/s41467-023-36507-y" },
@@ -145,7 +153,7 @@ const PUBLICATIONS = [
     year: 2022,
     venue: "Light: Science & Applications",
     title: "Frequency comb-to-comb stabilization over a 1.3-km free-space atmospheric optical link",
-    authors: "Yang, J., Lee, D. I., **Shin, D.**, Lee, J., Kim, B. S., Kang, H. J., Kim, Y.-J., Kim, S.-W.",
+    authors: "J. Yang, D. I. Lee, **D.-C. Shin**, J. Lee, B. S. Kim, H. J. Kang, Y.-J. Kim, S.-W. Kim",
     preview: "assets/img/publication_preview/lsa2022.png",
     links: [
       { label: "Paper", url: "https://doi.org/10.1038/s41377-022-00940-3" },
@@ -156,7 +164,7 @@ const PUBLICATIONS = [
     year: 2019,
     venue: "Sensors and Actuators B: Chemical",
     title: "Centrifuge-based step emulsification device for simple and fast generation of monodisperse picoliter droplets",
-    authors: "**Shin, D.**, Morimoto, Y., Sawayama, J., Miura, S., Takeuchi, S.",
+    authors: "**D.-C. Shin**, Y. Morimoto, J. Sawayama, S. Miura, S. Takeuchi",
     preview: "assets/img/publication_preview/s&a-b2019.png",
     links: [
       { label: "Paper", url: "https://doi.org/10.1016/j.snb.2019.127164" },

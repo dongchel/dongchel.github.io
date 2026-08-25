@@ -35,7 +35,8 @@ a{ color:inherit; text-decoration:none; }
 /* ---------- header ---------- */
 .site-header{
   position:sticky; top:0; z-index:50;
-  background:rgba(248,247,244,0.82);
+  background:rgba(255,255,255,0.82);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
   backdrop-filter: blur(10px) saturate(140%);
   border-bottom:1px solid var(--line);
 }
@@ -67,9 +68,10 @@ a{ color:inherit; text-decoration:none; }
 }
 .comb-wrap{
   position:absolute; inset:0;
+  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
 }
-#comb{ width:100%; height:100%; display:block; }
+#hero-canvas{ width:100%; height:100%; display:block; }
 .hero{
   position:relative; z-index:2;
   padding:120px 0 96px;
@@ -137,9 +139,10 @@ a{ color:inherit; text-decoration:none; }
   display:grid; grid-template-columns: 200px 1fr; gap:44px; align-items:start;
 }
 .about-photo{
-  width:100%; border-radius:var(--radius); overflow:hidden;
+  width:100%; height:auto; border-radius:var(--radius); overflow:hidden;
   border:1px solid var(--line);
   box-shadow:0 20px 40px -24px rgba(20,22,28,.25);
+  -webkit-user-drag:none;
 }
 .about-text p{ margin:0 0 16px; color:var(--ink); }
 .about-text a{ color:var(--accent); border-bottom:1px solid var(--accent-soft); }
@@ -199,6 +202,8 @@ a{ color:inherit; text-decoration:none; }
 .pub-title a:hover{ color:var(--accent); }
 .pub-authors{ font-size:13.5px; color:var(--muted); margin:0 0 4px; }
 .pub-authors b{ color:var(--ink); }
+.pub-authors sup{ font-size:.85em; }
+.pub-legend{ font-size:11.5px; color:var(--faint); margin:0 0 4px; }
 .pub-venue{ font-size:13px; color:var(--faint); font-style:italic; }
 .pub-links{ margin-top:8px; display:flex; gap:14px; }
 .pub-links a{ font-size:13px; font-weight:600; color:var(--accent); }

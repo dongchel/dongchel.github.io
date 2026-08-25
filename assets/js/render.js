@@ -1,11 +1,18 @@
 // render.js — turns data.js into DOM. No build step: edit data.js, refresh.
 
 function mdInline(str) {
-  // very small markdown subset: **bold**, *italic*, [text](url)
+  // very small markdown subset: **bold**, _italic_, [text](url), ^*^ / ^dagger^ superscript
   return str
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
     .replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
-    .replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    .replace(/_([^_]+)_/g, "<em>$1</em>")
+    .replace(/\^dagger\^/g, "<sup>&dagger;</sup>")
+    .replace(/\^([^^]+)\^/g, "<sup>$1</sup>");
+}
+
+// does an authors string use a ^*^ or ^dagger^ marker?
+function authorsUseMarkers(authors) {
+  return /\^(\*|dagger)\^/.test(authors);
 }
 
 function fmtDate(iso) {
@@ -31,12 +38,16 @@ function pubCard(pub) {
   const linksHtml = (pub.links || [])
     .map((l) => `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`)
     .join("");
+  const legend = authorsUseMarkers(pub.authors)
+    ? `<p class="pub-legend">${pub.authors.includes("^*^") ? "* corresponding author" : ""}${pub.authors.includes("^*^") && pub.authors.includes("^dagger^") ? " &middot; " : ""}${pub.authors.includes("^dagger^") ? "&dagger; co-first author" : ""}</p>`
+    : "";
   el.innerHTML = `
     <div class="pub-thumb"><img src="${pub.preview}" alt="" loading="lazy"></div>
     <div>
       <div class="pub-year">${pub.year} &middot; ${pub.venue}</div>
       <h3 class="pub-title"><a href="${primaryUrl}" target="_blank" rel="noopener">${mdInline(pub.title)}</a></h3>
       <p class="pub-authors">${mdInline(pub.authors)}</p>
+      ${legend}
       <div class="pub-links">${linksHtml}</div>
     </div>
   `;
