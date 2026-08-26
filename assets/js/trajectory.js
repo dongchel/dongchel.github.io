@@ -18,12 +18,15 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function resize() {
-    w = wrap.clientWidth;
-    h = wrap.clientHeight;
+    // size the drawing buffer to match the canvas's own CSS-controlled
+    // rendered size (set in site.css), not the parent frame's size — the
+    // frame is often exactly as small as the photo, while the canvas is
+    // meant to overflow decoratively around it.
+    const rect = canvas.getBoundingClientRect();
+    w = rect.width;
+    h = rect.height;
     canvas.width = w * dpr;
     canvas.height = h * dpr;
-    canvas.style.width = w + "px";
-    canvas.style.height = h + "px";
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
@@ -50,25 +53,11 @@
   let ox = 0, oy = 0, scale = 60;
 
   function layout() {
-    if (w < 720) {
-      // narrow screens: the text column runs full-width, so there's no
-      // clear space beside it. Place the trajectory in the reserved band
-      // below the CTA buttons instead of overlapping the copy.
-      const actions = document.querySelector(".hero-actions");
-      const wrapRect = wrap.getBoundingClientRect();
-      let actionsBottom = h * 0.55; // fallback if not found yet
-      if (actions) {
-        const ar = actions.getBoundingClientRect();
-        actionsBottom = ar.bottom - wrapRect.top;
-      }
-      scale = Math.min(w, 260) * 0.095;
-      ox = w * 0.5;
-      oy = actionsBottom + scale * 2.9;
-    } else {
-      ox = w * 0.62;
-      oy = h * 0.56;
-      scale = Math.min(w, h) * 0.16;
-    }
+    // small decorative frame behind the profile photo — always a compact
+    // square canvas now, so a simple centered layout works at every width.
+    ox = w * 0.5;
+    oy = h * 0.5;
+    scale = Math.min(w, h) * 0.155;
   }
 
   // ---- mouse: proximity gently "pokes" the oscillator ----
@@ -139,9 +128,9 @@
       const px2 = ox + b.x * scale, py2 = oy - b.p * scale;
       const energyMix = Math.min(b.e / 3.2, 1); // 0 cool -> 1 hot
       const hue = 232 - energyMix * 20;          // blue -> slightly violet-shifted when "hot"
-      const alpha = 0.05 + age * 0.5;
-      ctx.strokeStyle = `hsla(${hue}, 88%, ${56 - energyMix * 6}%, ${alpha})`;
-      ctx.lineWidth = 1.2 + age * 2;
+      const alpha = 0.04 + age * 0.38;
+      ctx.strokeStyle = `hsla(${hue}, 55%, ${52 - energyMix * 6}%, ${alpha})`;
+      ctx.lineWidth = 1 + age * 1.6;
       ctx.beginPath();
       ctx.moveTo(px1, py1);
       ctx.lineTo(px2, py2);
@@ -152,16 +141,16 @@
     if (n) {
       const last = trail[n - 1];
       const px = ox + last.x * scale, py = oy - last.p * scale;
-      const grad = ctx.createRadialGradient(px, py, 0, px, py, 9);
-      grad.addColorStop(0, "rgba(124,92,255,0.9)");
-      grad.addColorStop(1, "rgba(124,92,255,0)");
+      const grad = ctx.createRadialGradient(px, py, 0, px, py, 8);
+      grad.addColorStop(0, "rgba(90,100,140,0.55)");
+      grad.addColorStop(1, "rgba(90,100,140,0)");
       ctx.fillStyle = grad;
       ctx.beginPath();
       ctx.arc(px, py, 9, 0, Math.PI * 2);
       ctx.fill();
-      ctx.fillStyle = "#3457ff";
+      ctx.fillStyle = "#5a648c";
       ctx.beginPath();
-      ctx.arc(px, py, 3, 0, Math.PI * 2);
+      ctx.arc(px, py, 2.5, 0, Math.PI * 2);
       ctx.fill();
     }
   }
