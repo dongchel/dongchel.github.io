@@ -33,25 +33,34 @@ Copy an entry inside the `PUBLICATIONS` array:
   venue: "Nature Photonics",
   title: "Some great result",
   authors: "**Shin, D.**, Coauthor, A., Coauthor, B.",
-  preview: "assets/img/publication_preview/your-image.png",
+  preview: "assets/img/publication_preview/your-image.webp",
   links: [
     { label: "Paper", url: "https://..." },
     { label: "DOI", url: "https://doi.org/..." },
   ],
-  selected: true,   // true = also show on the homepage (top 4 most recent shown)
+  selected: true,   // true = also feature it on the homepage
 },
 ```
 
 - It automatically appears on `publications.html`, grouped under the right year.
 - If `selected: true`, it also shows in the "Selected Publications" section on
-  the homepage (only the 4 most recent `selected` papers are shown there).
-- Drop the preview image into `assets/img/publication_preview/` first.
+  the homepage (every `selected` paper is shown, newest first).
+- Drop the preview image into `assets/img/publication_preview/` first. Shrink it
+  to WebP so the page stays fast (the slot is small):
+
+      cwebp -q 82 -resize 640 0 figure.png -o assets/img/publication_preview/name.webp
+
 - Wrap your own name in `**...**` so it renders bold in the author list.
+- Mark corresponding authors with `^*^` and co-first authors with `^dagger^`.
 
 ## Everything else
 
-- Profile photo / bio text: edit the `#about` section directly in `index.html`.
-- CV: replace the PDF at `assets/pdf/` and update the filename referenced in
-  `cv.html` (the "Download CV" button's `href`).
-- Hero headline / quote / nav links: edit directly in `index.html` /
-  `publications.html` / `cv.html` (they're plain HTML).
+- Header block (name, title, research tags, CV/Scholar/email/LinkedIn buttons),
+  About text, and the CV section (education, experience, awards, talks) are
+  plain HTML in `index.html`.
+- New CV PDF: put it in `assets/pdf/` and update the filename in `index.html`
+  (it appears twice: the "CV (PDF)" button and "Download full CV").
+- After editing `site.css` or any `.js` file, bump the `?v=...` string on the
+  `<link>`/`<script>` tags in `index.html` and `publications.html` so browsers
+  fetch the new version instead of a cached one.
+- Dark mode follows the visitor's system setting; the moon/sun button overrides it.

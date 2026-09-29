@@ -20,12 +20,14 @@ function fmtDate(iso) {
   return `${y}.${m}.${d}`;
 }
 
-function newsCard(item) {
-  const el = document.createElement("div");
-  el.className = "news-card";
+const NEWS_VISIBLE = 5; // items shown before "Show all"
+
+function newsItem(item) {
+  const el = document.createElement("li");
+  el.className = "news-item";
   el.innerHTML = `
-    <span class="news-tag">${item.tag}</span>
     <span class="news-date">${fmtDate(item.date)}</span>
+    <span class="news-tag">${item.tag}</span>
     <p class="news-body">${mdInline(item.body)}</p>
   `;
   return el;
@@ -42,7 +44,7 @@ function pubCard(pub) {
     ? `<p class="pub-legend">${pub.authors.includes("^*^") ? "* corresponding author" : ""}${pub.authors.includes("^*^") && pub.authors.includes("^dagger^") ? " &middot; " : ""}${pub.authors.includes("^dagger^") ? "&dagger; co-first author" : ""}</p>`
     : "";
   el.innerHTML = `
-    <div class="pub-thumb"><img src="${pub.preview}" alt="" loading="lazy"></div>
+    <div class="pub-thumb"><img src="${pub.preview}" alt="" width="240" height="176" loading="lazy" decoding="async"></div>
     <div>
       <div class="pub-year">${pub.year} &middot; ${pub.venue}</div>
       <h3 class="pub-title"><a href="${primaryUrl}" target="_blank" rel="noopener">${mdInline(pub.title)}</a></h3>
@@ -63,18 +65,36 @@ function sortedPubs() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // ---- homepage: news rail ----
-  const rail = document.getElementById("news-rail");
-  if (rail) {
-    sortedNews().forEach((item) => rail.appendChild(newsCard(item)));
+  // ---- homepage: news list (first NEWS_VISIBLE, rest behind "Show all") ----
+  const list = document.getElementById("news-list");
+  if (list) {
+    const items = sortedNews().map(newsItem);
+    items.forEach((el, i) => {
+      if (i >= NEWS_VISIBLE) el.hidden = true;
+      list.appendChild(el);
+    });
+    if (items.length > NEWS_VISIBLE) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "news-more";
+      btn.setAttribute("aria-expanded", "false");
+      const label = () => `Show all ${items.length} updates ↓`;
+      btn.textContent = label();
+      btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") !== "true";
+        items.forEach((el, i) => { if (i >= NEWS_VISIBLE) el.hidden = !open; });
+        btn.setAttribute("aria-expanded", String(open));
+        btn.textContent = open ? "Show fewer ↑" : label();
+      });
+      list.after(btn);
+    }
   }
 
-  // ---- homepage: selected publications (max 4, most recent) ----
+  // ---- homepage: selected publications (every selected:true, newest first) ----
   const selectedWrap = document.getElementById("selected-pub-list");
   if (selectedWrap) {
     sortedPubs()
       .filter((p) => p.selected)
-      .slice(0, 4)
       .forEach((p) => selectedWrap.appendChild(pubCard(p)));
   }
 
@@ -96,8 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         group.appendChild(head);
         const list = document.createElement("div");
         list.className = "pub-list";
-        list.dataset.stagger = "";
-        byYear[year].forEach((p) => list.appendChild(pubCard(p)));
+              byYear[year].forEach((p) => list.appendChild(pubCard(p)));
         group.appendChild(list);
         fullWrap.appendChild(group);
       });

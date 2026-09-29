@@ -7,7 +7,7 @@
 // To add a publication: copy an entry in PUBLICATIONS and paste it
 // anywhere in the array (also auto-sorted, and auto-grouped by year
 // on publications.html). Set selected:true to feature it on the
-// homepage (only the 4 most recent selected papers show there).
+// homepage.
 //
 // Text fields support light markdown:
 //   **bold**      -> <b>bold</b>        (use for your own name in authors)
@@ -26,6 +26,11 @@
 // ---------------------------------------------------------------
 
 const NEWS = [
+  {
+    date: "2026-09-16",
+    tag: "Paper",
+    body: "Hyperspectral dual-comb compressive ghost imaging appeared in _Light: Science & Applications_. [Read it →](https://www.nature.com/articles/s41377-026-02417-z)"
+  },
   {
     date: "2026-05-10",
     tag: "Paper",
@@ -71,22 +76,34 @@ const NEWS = [
 const PUBLICATIONS = [
   {
     year: 2026,
+    venue: "Light: Science & Applications",
+    title: "Hyperspectral dual-comb compressive ghost imaging with deep learning reconstruction",
+    authors: "M.-G. Suh, D. Dang, M. Gao, Y. Jin, **D.-C. Shin**, A. Gupta, B. J. Park, C. Uzundal, B. Hu, W. J. M. Kort-Kamp, H. W. H. Lee",
+    preview: "assets/img/publication_preview/ghost-imaging.webp",
+    links: [
+      { label: "Paper", url: "https://www.nature.com/articles/s41377-026-02417-z" },
+      { label: "DOI", url: "https://doi.org/10.1038/s41377-026-02417-z" },
+    ],
+    selected: false,
+  },
+  {
+    year: 2026,
     venue: "Nature Communications",
     title: "Nanometre-precision terahertz interferometry for battery electrode metrology",
-    authors: "G. Kang, J. Kim, M.-R. Kim, Y. Lee, **D.-C. Shin**, J. Jeon, H. Kim, D. H. Kim, J. Lee, S. Park, Y.-J. Kim",
-    preview: "assets/img/publication_preview/battery.png",
+    authors: "G. Kang, J. Kim, M.-R. Kim, Y. Lee, **D.-C. Shin**, J. Jeon, H. Kim, D. H. Kim, J. Lee, S. Park, Y.-J. Kim^*^",
+    preview: "assets/img/publication_preview/battery.webp",
     links: [
       { label: "Paper", url: "https://www.nature.com/articles/s41467-026-74193-8" },
       { label: "DOI", url: "https://doi.org/10.1038/s41467-026-74193-8" },
     ],
-    selected: true,
+    selected: false,
   },
   {
     year: 2026,
     venue: "Optics & Laser Technology",
     title: "Compact, robust all-fiber platform for 1-Hz-linewidth synchronization of optical frequency combs using single comb line extraction",
-    authors: "**D.-C. Shin**, J. Yang, D. I. Lee, G. Kang, S.-W. Kim, Y.-J. Kim",
-    preview: "assets/img/publication_preview/comb-to-comb.png",
+    authors: "**D.-C. Shin**^dagger^, J. Yang^dagger^, D. I. Lee, G. Kang, S.-W. Kim^*^, Y.-J. Kim^*^",
+    preview: "assets/img/publication_preview/comb-to-comb.webp",
     links: [
       { label: "Paper", url: "https://www.sciencedirect.com/science/article/abs/pii/S0030399226008777" },
       { label: "DOI", url: "https://doi.org/10.1016/j.optlastec.2026.115526" },
@@ -97,20 +114,20 @@ const PUBLICATIONS = [
     year: 2026,
     venue: "arXiv preprint",
     title: "Continuum-field quantum optics of frequency comb metrology",
-    authors: "**D.-C. Shin**, E. Ng, M.-G. Suh, V. Sudhir",
-    preview: "assets/img/publication_preview/quantum-comb.png",
+    authors: "**D.-C. Shin**^*^, E. Ng, M.-G. Suh, V. Sudhir",
+    preview: "assets/img/publication_preview/quantum-comb.webp",
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2605.16702" },
       { label: "DOI", url: "https://doi.org/10.48550/ARXIV.2605.16702" },
     ],
-    selected: false,
+    selected: true,
   },
   {
     year: 2025,
     venue: "Optica",
     title: "Active laser cooling of a centimeter-scale torsional oscillator",
-    authors: "**D.-C. Shin**, T. M. Hayward, D. Fife, R. Menon, V. Sudhir",
-    preview: "assets/img/publication_preview/laser2025.png",
+    authors: "**D.-C. Shin**^*^, T. M. Hayward, D. Fife, R. Menon, V. Sudhir^*^",
+    preview: "assets/img/publication_preview/laser2025.webp",
     links: [
       { label: "Paper", url: "https://doi.org/10.1364/OPTICA.548098" },
     ],
@@ -120,8 +137,8 @@ const PUBLICATIONS = [
     year: 2024,
     venue: "Review of Scientific Instruments",
     title: "Temperature stabilization of a lab space at 10 mK-level over a day",
-    authors: "D. Fife, **D.-C. Shin**, V. Sudhir",
-    preview: "assets/img/publication_preview/temp.png",
+    authors: "D. Fife^*^, **D.-C. Shin**, V. Sudhir^*^",
+    preview: "assets/img/publication_preview/temp.webp",
     links: [
       { label: "Paper", url: "https://doi.org/10.1063/5.0213133" },
     ],
@@ -131,8 +148,8 @@ const PUBLICATIONS = [
     year: 2024,
     venue: "PhotoniX",
     title: "Real-time monitoring of fast gas dynamics with a single-molecule resolution by frequency-comb-referenced plasmonic phase spectroscopy",
-    authors: "D.-A. Nguyen, D. H. Kim, G. H. Lee, S. Kim, **D.-C. Shin**, J. Park, H.-J. Choi, S.-W. Kim, S. Kim, Y.-J. Kim",
-    preview: "assets/img/publication_preview/photonix2024.png",
+    authors: "D.-A. Nguyen^dagger^, D. H. Kim^dagger^, G. H. Lee, S. Kim, **D.-C. Shin**, J. Park, H.-J. Choi, S.-W. Kim, S. Kim^*^, Y.-J. Kim^*^",
+    preview: "assets/img/publication_preview/photonix2024.webp",
     links: [
       { label: "Paper", url: "https://photonix.springeropen.com/articles/10.1186/s43074-024-00140-9" },
     ],
@@ -142,8 +159,8 @@ const PUBLICATIONS = [
     year: 2023,
     venue: "Nature Communications",
     title: "Photonic comb-rooted synthesis of ultra-stable terahertz frequencies",
-    authors: "**D.-C. Shin**, B. S. Kim, H. Jang, Y.-J. Kim, S.-W. Kim",
-    preview: "assets/img/publication_preview/ncomm2023.png",
+    authors: "**D.-C. Shin**, B. S. Kim, H. Jang, Y.-J. Kim^*^, S.-W. Kim^*^",
+    preview: "assets/img/publication_preview/ncomm2023.webp",
     links: [
       { label: "Paper", url: "https://doi.org/10.1038/s41467-023-36507-y" },
     ],
@@ -153,19 +170,19 @@ const PUBLICATIONS = [
     year: 2022,
     venue: "Light: Science & Applications",
     title: "Frequency comb-to-comb stabilization over a 1.3-km free-space atmospheric optical link",
-    authors: "J. Yang, D. I. Lee, **D.-C. Shin**, J. Lee, B. S. Kim, H. J. Kang, Y.-J. Kim, S.-W. Kim",
-    preview: "assets/img/publication_preview/lsa2022.png",
+    authors: "J. Yang, D. I. Lee, **D.-C. Shin**, J. Lee, B. S. Kim, H. J. Kang, Y.-J. Kim^*^, S.-W. Kim^*^",
+    preview: "assets/img/publication_preview/lsa2022.webp",
     links: [
       { label: "Paper", url: "https://doi.org/10.1038/s41377-022-00940-3" },
     ],
-    selected: true,
+    selected: false,
   },
   {
     year: 2019,
     venue: "Sensors and Actuators B: Chemical",
     title: "Centrifuge-based step emulsification device for simple and fast generation of monodisperse picoliter droplets",
-    authors: "**D.-C. Shin**, Y. Morimoto, J. Sawayama, S. Miura, S. Takeuchi",
-    preview: "assets/img/publication_preview/s&a-b2019.png",
+    authors: "**D.-C. Shin**, Y. Morimoto, J. Sawayama, S. Miura, S. Takeuchi^*^",
+    preview: "assets/img/publication_preview/sab2019.webp",
     links: [
       { label: "Paper", url: "https://doi.org/10.1016/j.snb.2019.127164" },
     ],

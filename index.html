@@ -3,14 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Dongchel Shin</title>
-  <meta name="description" content="Dongchel Shin — PhD candidate at MIT working on quantum optics, quantum optomechanics, and precision measurements." />
+  <title>Dongchel Shin — Precision Optics &amp; Quantum Optomechanics, MIT</title>
+  <meta name="description" content="Dongchel Shin is a PhD candidate in Mechanical Engineering at MIT (Quantum & Precision Measurements Group), working on precision optics, quantum optomechanics, laser stabilization, and optical frequency combs." />
+  <link rel="canonical" href="https://dongchel.github.io/" />
+
+  <!-- link previews (Slack, LinkedIn, iMessage, X, email clients) -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://dongchel.github.io/" />
+  <meta property="og:title" content="Dongchel Shin — Precision Optics & Quantum Optomechanics" />
+  <meta property="og:description" content="PhD candidate at MIT building quantum-limited optical and optomechanical measurement systems: laser-cooled oscillators, frequency combs, and ultra-stable lasers." />
+  <meta property="og:image" content="https://dongchel.github.io/assets/img/og-image.jpg" />
+  <meta property="og:image:width" content="900" />
+  <meta property="og:image:height" content="600" />
+  <meta property="og:image:alt" content="Dongchel Shin aligning optics next to a vacuum chamber in the lab" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- structured data: lets search engines show name / affiliation / profiles -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dongchel Shin",
+    "url": "https://dongchel.github.io/",
+    "image": "https://dongchel.github.io/assets/img/og-image.jpg",
+    "email": "mailto:dongchel@mit.edu",
+    "jobTitle": "PhD Candidate, Mechanical Engineering",
+    "affiliation": { "@type": "Organization", "name": "Massachusetts Institute of Technology", "url": "https://www.mit.edu/" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "The University of Tokyo" },
+      { "@type": "CollegeOrUniversity", "name": "Tokyo Institute of Technology" }
+    ],
+    "knowsAbout": ["Precision optics", "Laser systems", "Control systems", "Optical frequency combs", "Quantum optomechanics", "Quantum sensing", "Quantum optics"],
+    "sameAs": [
+      "https://scholar.google.com/citations?user=tPsdNHAAAAAJ",
+      "https://www.linkedin.com/in/shin-dc"
+    ]
+  }
+  </script>
+
+  <!-- runs before paint: saved theme choice + opt-in scroll animation -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      try { var t = localStorage.getItem("theme"); if (t === "dark" || t === "light") d.dataset.theme = t; } catch (e) {}
+      if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) d.classList.add("anim");
+    })();
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/site.css" />
+  <link rel="stylesheet" href="assets/css/site.css?v=20260929g" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2226%22>🌊</text></svg>">
 </head>
 <body>
@@ -20,30 +64,70 @@
       <a class="brand" href="/">
         <span class="brand-name">Dongchel Shin</span>
       </a>
-      <nav class="nav" aria-label="Primary">
-        <a class="nav-link active" href="/">Home</a>
-        <a class="nav-link" href="publications.html">Publications</a>
-        <a class="nav-link" href="cv.html">CV</a>
-      </nav>
+      <div class="header-right">
+        <nav class="nav" aria-label="Primary">
+          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link" href="publications.html">Publications</a>
+          <a class="nav-link" href="#cv">CV</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.2 4.2l1.8 1.8M18 18l1.8 1.8M1.5 12H4M20 12h2.5M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
+
+    <section class="intro">
+      <div class="container intro-grid">
+        <div>
+          <h1 class="intro-name">Dongchel Shin</h1>
+          <p class="intro-role">PhD Candidate, Mechanical Engineering, MIT</p>
+          <p class="intro-affil"><a href="https://precision.mit.edu/" target="_blank" rel="noopener">Quantum &amp; Precision Measurements Group</a></p>
+          <ul class="intro-tags" aria-label="Research areas">
+            <li>Precision optics</li>
+            <li>Laser systems</li>
+            <li>Control systems</li>
+            <li>Quantum optomechanics</li>
+            <li>Quantum sensing</li>
+          </ul>
+          <div class="intro-actions">
+            <a class="btn btn-primary" href="assets/pdf/CV_Dongchel_260711.pdf" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg>
+              CV (PDF)
+            </a>
+            <a class="btn" href="https://scholar.google.com/citations?user=tPsdNHAAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+              Google Scholar
+            </a>
+            <a class="btn" href="mailto:dongchel@mit.edu" title="dongchel@mit.edu">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              Email
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/shin-dc" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        <figure class="intro-media" style="margin:0;">
+          <img class="intro-photo" src="assets/img/dongchel4.webp" width="1200" height="800" alt="Dongchel Shin aligning optics next to a vacuum chamber in the lab" fetchpriority="high">
+          <figcaption class="intro-caption"><em>“To measure is to know.”</em> — Lord Kelvin</figcaption>
+        </figure>
+      </div>
+    </section>
 
     <section class="section" id="about">
       <div class="container">
         <div class="section-head reveal">
           <h2 class="section-title">About</h2>
         </div>
-        <div class="about-grid reveal">
-          <div class="about-photo-frame">
-            <img class="about-photo" src="assets/img/dongchel4.jpg" alt="Portrait of Dongchel Shin">
-            <p class="about-quote"><em>“To measure is to know.”</em> — Lord Kelvin</p>
-          </div>
-          <div class="about-text">
-            <p>I am a fourth-year PhD candidate at MIT, advised by <a href="https://scholar.google.com/citations?user=j4NKNWQAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Prof. Vivishek Sudhir</a>. My research focuses on <code>quantum optics, quantum optomechanics, and precision measurements</code>, aiming to explore quantum sensing and metrology, macroscopic quantum phenomena, and the interface between quantum mechanics and gravity. Bridging experiment and theory, my work involves the design and implementation of optical, mechanical, and electronic systems, as well as theoretical studies in quantum physics, stochastic processes, and estimation theory.</p>
-            <p>Before MIT, I earned B.S. and M.S. degrees in Mechanical Engineering from Tokyo Institute of Technology and the University of Tokyo, respectively. Then, I worked at KAIST as a research associate (and fulfilled military service), advised by <a href="https://scholar.google.com/citations?user=wHt0GtQAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Prof. Seung-Woo Kim</a> and <a href="https://scholar.google.com/citations?user=DqkYhz4AAAAJ&hl=en_" target="_blank" rel="noopener">Prof. Young-Jin Kim</a>. There, I carried out experiments on <code>frequency combs</code>, <code>time/frequency standards</code>, and <code>precision measurements</code>.</p>
-          </div>
+        <div class="about-text reveal">
+          <p>I am a fifth-year PhD candidate in Mechanical Engineering at MIT, working in the <a href="https://precision.mit.edu/" target="_blank" rel="noopener">Quantum &amp; Precision Measurements Group</a> with <a href="https://scholar.google.com/citations?user=j4NKNWQAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">Prof. Vivishek Sudhir</a>. I build <mark>optical and optomechanical measurement systems that operate at the quantum limit</mark>, from laser-cooled, centimeter-scale torsional oscillators to quantum-enhanced frequency-comb metrology, with the long-term goal of probing macroscopic quantum phenomena and the interface between quantum mechanics and gravity.</p>
+          <p>My work bridges experiment and theory: I design and build the optical, mechanical, and electronic systems behind these experiments, and use quantum optics, stochastic processes, and estimation theory to understand their fundamental limits. In 2025 I was a research intern at <a href="https://ntt-research.com/phi-lab/" target="_blank" rel="noopener">NTT Research PHI Lab</a>, working on quantum-enhanced frequency-comb metrology.</p>
+          <p>Before MIT, I spent four years at KAIST as a research associate (while fulfilling military service) with <a href="https://scholar.google.com/citations?user=wHt0GtQAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">Prof. Seung-Woo Kim</a> and <a href="https://scholar.google.com/citations?user=DqkYhz4AAAAJ&amp;hl=en_" target="_blank" rel="noopener">Prof. Young-Jin Kim</a>, building frequency-comb-based time/frequency standards and precision measurement systems. I received my B.Eng. from Tokyo Institute of Technology and my M.S. from the University of Tokyo.</p>
         </div>
       </div>
     </section>
@@ -52,10 +136,11 @@
       <div class="container">
         <div class="section-head reveal">
           <h2 class="section-title">News</h2>
-          <span class="section-kicker">Scroll for more &rarr;</span>
         </div>
-        <div class="news-rail reveal" data-stagger id="news-rail">
-          <!-- auto-filled from assets/js/data.js (NEWS) by render.js -->
+        <div class="reveal">
+          <ul class="news-list" id="news-list">
+            <!-- auto-filled from assets/js/data.js (NEWS) by render.js -->
+          </ul>
         </div>
       </div>
     </section>
@@ -66,8 +151,61 @@
           <h2 class="section-title">Selected Publications</h2>
           <a class="kicker-link" href="publications.html">All publications &rarr;</a>
         </div>
-        <div class="pub-list reveal" data-stagger id="selected-pub-list">
-          <!-- auto-filled from assets/js/data.js (PUBLICATIONS, selected:true, max 4) by render.js -->
+        <div class="pub-list reveal" id="selected-pub-list">
+          <!-- auto-filled from assets/js/data.js (PUBLICATIONS with selected:true) by render.js -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cv">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">CV</h2>
+          <a class="kicker-link" href="assets/pdf/CV_Dongchel_260711.pdf" target="_blank" rel="noopener">Download full CV (PDF) &darr;</a>
+        </div>
+        <div class="cv-grid reveal">
+          <div class="cv-block cv-skills">
+            <h3>Technical Skills</h3>
+            <dl class="skills-list">
+              <div><dt>Optics &amp; lasers</dt><dd>Laser frequency and intensity stabilization, optical cavities, optical frequency combs, phase locking, fiber and free-space optics</dd></div>
+              <div><dt>Control &amp; automation</dt><dd>Multi-loop PID feedback, FPGA-based real-time control, actuator control and automation of optical setups</dd></div>
+              <div><dt>Precision measurement</dt><dd>Quantum-limited optical readout, laser cooling of mechanical oscillators, low-noise detection, environmental stabilization (10&nbsp;mK)</dd></div>
+              <div><dt>Theory &amp; modeling</dt><dd>Quantum optics, stochastic processes, estimation theory, noise modeling</dd></div>
+            </dl>
+          </div>
+          <div class="cv-block">
+            <h3>Education</h3>
+            <ul class="cv-list">
+              <li><span class="cv-when">2022 – present</span><span class="cv-what">Ph.D., Mechanical Engineering</span><span class="cv-where">Massachusetts Institute of Technology · Advisor: Prof. Vivishek Sudhir</span></li>
+              <li><span class="cv-when">2016 – 2018</span><span class="cv-what">M.S., Information Science &amp; Technology</span><span class="cv-where">The University of Tokyo · Advisor: Prof. Shoji Takeuchi</span></li>
+              <li><span class="cv-when">2013 – 2016</span><span class="cv-what">B.Eng., Summa Cum Laude (in 3.5 years)</span><span class="cv-where">Tokyo Institute of Technology</span></li>
+            </ul>
+          </div>
+          <div class="cv-block">
+            <h3>Experience</h3>
+            <ul class="cv-list">
+              <li><span class="cv-when">2022 – present</span><span class="cv-what">Graduate Research Assistant, MIT</span><span class="cv-where">Quantum measurement and control of macroscopic torsional oscillators</span></li>
+              <li><span class="cv-when">2025 (May – Sep)</span><span class="cv-what">Graduate Intern, NTT Research PHI Lab</span><span class="cv-where">Theory and experiment for quantum-enhanced frequency-comb metrology</span></li>
+              <li><span class="cv-when">2018 – 2022</span><span class="cv-what">Research Associate, KAIST</span><span class="cv-where">Optical frequency comb-enabled precision measurements</span></li>
+            </ul>
+          </div>
+          <div class="cv-block">
+            <h3>Honors &amp; Awards</h3>
+            <ul class="cv-list">
+              <li><span class="cv-when">2024 – 2026</span><span class="cv-what">MathWorks Engineering Fellowship</span><span class="cv-where">MIT</span></li>
+              <li><span class="cv-when">2017</span><span class="cv-what">Hatakeyama Award</span><span class="cv-where">The Japan Society of Mechanical Engineers</span></li>
+              <li><span class="cv-when">2016 – 2018</span><span class="cv-what">Kwanjeong Educational Foundation Scholarship</span><span class="cv-where">South Korea</span></li>
+              <li><span class="cv-when">2013 – 2016</span><span class="cv-what">Korea–Japan Joint Government Scholarship</span></li>
+            </ul>
+          </div>
+          <div class="cv-block">
+            <h3>Selected Talks</h3>
+            <ul class="cv-list">
+              <li><span class="cv-when">2026</span><span class="cv-what">CLEO 2026, Charlotte, NC</span><span class="cv-where">Quantum-limited readout and feedback cooling of a centimeter-scale torsional oscillator</span></li>
+              <li><span class="cv-when">2025</span><span class="cv-what">APS Global Physics Summit, Anaheim, CA</span><span class="cv-where">Active radiation-pressure cooling of a cm-scale torsion pendulum</span></li>
+              <li><span class="cv-when">2022</span><span class="cv-what">CLEO 2022, San Jose, CA</span><span class="cv-where">Terahertz frequency synthesizer referenced to an ultra-stable optical cavity</span></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -76,17 +214,23 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span class="footer-sub">&copy; <span id="yy"></span> Dongchel Shin. All rights reserved.</span>
+      <span class="footer-sub">&copy; <span id="yy"></span> Dongchel Shin</span>
       <div class="socials">
-        <a href="mailto:dongchel@mit.edu" aria-label="Email" title="Email"><i>&#9993;</i></a>
-        <a href="https://scholar.google.com/citations?user=tPsdNHAAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">G</a>
-        <a href="https://www.linkedin.com/in/shin-dc" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">in</a>
+        <a href="mailto:dongchel@mit.edu" aria-label="Email" title="Email">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?user=tPsdNHAAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/shin-dc" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/render.js"></script>
-  <script src="assets/js/site.js"></script>
+  <script src="assets/js/data.js?v=20260929g"></script>
+  <script src="assets/js/render.js?v=20260929g"></script>
+  <script src="assets/js/site.js?v=20260929g"></script>
 </body>
 </html>
