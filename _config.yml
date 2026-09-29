@@ -198,7 +198,9 @@ kramdown:
       start_line: 1
 
 # Includes & excludes
-include: ['_pages']
+# _pages (old al-folio about/cv/publications) is no longer built: the live site is
+# the plain index.html + publications.html at the repo root.
+include: []
 exclude:
   - bin
   - Gemfile
