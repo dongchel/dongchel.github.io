@@ -192,7 +192,7 @@ a{ color:inherit; text-decoration:none; }
 .kicker-link{ font-size:13.5px; color:var(--accent); font-weight:600; white-space:nowrap; }
 .kicker-link:hover{ text-decoration:underline; }
 
-.about-text{ max-width:760px; }
+.about-text{ max-width:none; }
 .about-text p{ margin:0 0 16px; }
 .about-text a{ color:var(--accent); border-bottom:1px solid var(--accent-soft); }
 .about-text a:hover{ border-bottom-color:var(--accent); }
