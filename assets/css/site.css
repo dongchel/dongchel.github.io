@@ -325,3 +325,7 @@ a{ color:inherit; text-decoration:none; }
   .nav{ gap:11px; }
   .nav-link{ font-size:13.5px; }
 }
+
+/* four nav items (Home, Research, Publications, CV) must fit on phones */
+@media(max-width:440px){.header-right{gap:8px}.nav{gap:9px}.nav-link{font-size:12px}.brand-name{font-size:14px}.theme-toggle{width:30px;height:30px}}
+@media(max-width:370px){.nav{gap:7px}.brand-name{font-size:13px}.header-right{gap:6px}}
