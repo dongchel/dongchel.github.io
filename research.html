@@ -43,34 +43,18 @@
     .topic-nav{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0;padding:0;list-style:none}
     .topic-nav a{display:inline-block;font-size:13.5px;font-weight:500;color:var(--ink);border:1px solid var(--line);background:var(--bg-card);padding:6px 13px;border-radius:999px;transition:border-color .2s ease,color .2s ease}
     .topic-nav a:hover{border-color:var(--accent);color:var(--accent)}
-    .topic-num{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--accent);margin:0 0 6px}
-    .topic-lede{font-size:17px;color:var(--muted);max-width:720px;margin:10px 0 0}
-    .topic-banner{margin:28px 0 8px;width:min(1180px,calc(100vw - 32px));position:relative;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-    .project-body sup{line-height:0}
-    @media(max-width:720px){.topic-banner{overflow-x:auto}.topic-banner img{min-width:760px}}
+    .topic-banner{margin:28px 0 30px}
+    .topic-banner img{width:100%;height:auto}
+    @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .topic-banner img{filter:invert(1) hue-rotate(180deg)}}
+    :root[data-theme="dark"] .topic-banner img{filter:invert(1) hue-rotate(180deg)}
+    .paper-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+    .paper-list li{font-size:15px;line-height:1.55;color:var(--muted);padding-left:16px;position:relative}
+    .paper-list li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+    .paper-list .t{color:var(--ink)}
+    .paper-list a{color:var(--accent);font-weight:500}
+    .paper-list a:hover{text-decoration:underline}
     @media(max-width:440px){.header-right{gap:8px}.nav{gap:9px}.nav-link{font-size:12px}.brand-name{font-size:14px}.theme-toggle{width:30px;height:30px}}
     @media(max-width:370px){.nav{gap:7px}.brand-name{font-size:13px}.header-right{gap:6px}}
-    .topic-banner img{width:100%;height:auto}
-    .project{display:grid;grid-template-columns:260px 1fr;gap:32px;padding:30px 0;border-top:1px solid var(--line);align-items:start}
-    .project:first-of-type{border-top:0}
-    .project-fig{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-    .project-fig img{width:100%;height:auto}
-    .project-title{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.3;margin:0 0 10px;letter-spacing:-.005em}
-    .project-body p{margin:0 0 12px;font-size:15.5px}
-    .project-cite{font-size:13.5px;color:var(--muted);margin:14px 0 0}
-    .project-cite b{color:var(--ink)}
-    .project-cite em{color:var(--ink)}
-    .project-links{margin-top:8px;display:flex;gap:14px}
-    .project-links a{font-size:13px;font-weight:600;color:var(--accent)}
-    .project-links a:hover{text-decoration:underline}
-    .related{margin-top:14px;padding-top:24px;border-top:1px solid var(--line)}
-    .related h4{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
-    .related ul{list-style:none;margin:0;padding:0}
-    .related li{font-size:14.5px;padding:7px 0}
-    .related li a{color:var(--ink);font-weight:500}
-    .related li a:hover{color:var(--accent)}
-    .related .rel-meta{color:var(--muted);font-size:13.5px}
-    @media(max-width:720px){.project{grid-template-columns:1fr;gap:18px}.project-fig{max-width:420px}}
   </style>
 </head>
 <body>
@@ -100,7 +84,7 @@
       <div class="container">
         <p class="hero-eyebrow">Research</p>
         <h1 class="hero-title">Quantum &amp; Precision Metrology</h1>
-        <p class="hero-sub">I work across the full stack, from theory to hardware. Starting from first principles, I find what fundamentally limits a system, then build what it takes to reach that limit: the optics, mechanics, and electronics, and the control and instrumentation that tie them together.</p>
+        <p class="hero-sub">I work across theory and experiment. Starting from first principles, I find what fundamentally limits a system, then build what it takes to reach that limit: the optics, mechanics, and electronics, and the control and instrumentation that tie them together.</p>
         <ul class="topic-nav" aria-label="Research topics">
           <li><a href="#macroscopic-quantum">Macroscopic quantum mechanics</a></li>
           <li><a href="#quantum-metrology-theory">Theoretical tools for quantum metrology</a></li>
@@ -109,125 +93,48 @@
       </div>
     </section>
 
-    <!-- ===================== 1. Macroscopic quantum mechanics ===================== -->
     <section class="section" id="macroscopic-quantum">
-      <div class="container">
-        <div class="reveal">
-          <p class="topic-num">01</p>
-          <h2 class="section-title">Macroscopic Quantum Mechanics</h2>
-          <p class="topic-lede">Bringing mechanical objects heavy enough to feel gravity into the quantum regime, using quantum-limited optical measurement and feedback.</p>
-          <figure class="topic-banner">
-            <img src="assets/img/research/banner-macroscopic-quantum.svg" width="1440" height="338" alt="A feedback loop (oscillator, measurement, filter, actuation) beside the oscillator's energy ladder, with thermal occupation collapsing toward the ground level as it cools" loading="lazy">
-          </figure>
-        </div>
-
-        <article class="project reveal">
-          <figure class="project-fig">
-            <img src="assets/img/publication_preview/laser2025.webp" width="410" height="362" alt="Laser cooling of a centimeter-scale torsional oscillator" loading="lazy">
-          </figure>
-          <div class="project-body">
-            <h3 class="project-title">Laser cooling a centimeter-scale torsion pendulum</h3>
-            <p>Torsion pendula have long been the instrument of choice for measuring weak gravitational forces, and they keep a high mechanical quality factor even when mass-loaded. We laser-cooled a centimeter-scale torsional oscillator from room temperature to 10&nbsp;mK, an average occupancy of 6000 phonons, using radiation-pressure forces conditioned on a quantum-noise-limited optical measurement.</p>
-            <p>The readout is a &ldquo;mirrored&rdquo; optical lever that passively rejects spatial-mode noise by 60&nbsp;dB, reaching an imprecision 9.8&nbsp;dB below the peak zero-point motion. Together with a mechanical quality factor of 1.4&nbsp;&times;&nbsp;10<sup>7</sup>, this demonstrates the ingredients needed to reach the quantum ground state of torsional motion.</p>
-            <p class="project-cite"><b>D.-C. Shin</b>, T. M. Hayward, D. Fife, R. Menon, V. Sudhir &middot; <em>Optica</em> <b>12</b>, 473 (2025)</p>
-            <div class="project-links">
-              <a href="https://doi.org/10.1364/OPTICA.548098" target="_blank" rel="noopener">Paper</a>
-              <a href="https://news.mit.edu/2025/is-gravity-quantum-0520" target="_blank" rel="noopener">MIT News</a>
-            </div>
-          </div>
-        </article>
-
-        <div class="related reveal">
-          <h4>Related work</h4>
-          <ul>
-            <li><a href="https://doi.org/10.1063/5.0213133" target="_blank" rel="noopener">Temperature stabilization of a lab space at 10&nbsp;mK-level over a day</a> <span class="rel-meta">&middot; <em>Rev. Sci. Instrum.</em> (2024)</span></li>
-          </ul>
-        </div>
+      <div class="container reveal">
+        <h2 class="section-title">Macroscopic Quantum Mechanics</h2>
+        <figure class="topic-banner">
+          <img src="assets/img/research/banner-macroscopic-quantum.svg?v=20261012b" width="1333" height="318" alt="A feedback loop (oscillator, measurement, filter, actuation) beside the oscillator's energy ladder, with thermal occupation collapsing toward the ground level as it cools" loading="lazy">
+        </figure>
+        <ul class="paper-list">
+            <li>D.-C. Shin, T. M. Hayward, D. Fife, R. Menon, V. Sudhir, <span class="t">&ldquo;Active laser cooling of a centimeter-scale torsional oscillator,&rdquo;</span> <a href="https://doi.org/10.1364/OPTICA.548098" target="_blank" rel="noopener">Optica</a> (2025)</li>
+            <li>D. Fife, D.-C. Shin, V. Sudhir, <span class="t">&ldquo;Temperature stabilization of a lab space at 10&nbsp;mK-level over a day,&rdquo;</span> <a href="https://doi.org/10.1063/5.0213133" target="_blank" rel="noopener">Rev. Sci. Instrum.</a> (2024)</li>
+        </ul>
       </div>
     </section>
 
-    <!-- ===================== 2. Theoretical tools ===================== -->
     <section class="section" id="quantum-metrology-theory">
-      <div class="container">
-        <div class="reveal">
-          <p class="topic-num">02</p>
-          <h2 class="section-title">Theoretical Tools for Quantum Metrology</h2>
-          <p class="topic-lede">Quantum theory for predicting, and beating, the noise limits of optical measurements.</p>
-          <figure class="topic-banner">
-            <img src="assets/img/research/banner-quantum-metrology-theory.svg" width="1440" height="347" alt="A phase-squeezed state in phase space, and two photons at the sidebands of a laser joined by an infinity-shaped loop to show their entanglement" loading="lazy">
-          </figure>
-        </div>
-
-        <article class="project reveal">
-          <figure class="project-fig">
-            <img src="assets/img/publication_preview/quantum-comb.webp" width="640" height="505" alt="Comb-line-resolved quantum model of a frequency comb" loading="lazy">
-          </figure>
-          <div class="project-body">
-            <h3 class="project-title">Continuum-field quantum optics of frequency comb metrology</h3>
-            <p>Every comb-based measurement ends at a photodetector, where the quantum noise of light sets the ultimate limit. We developed a first-principles quantum theory that traces this noise to the fluctuations surrounding each comb line, built on continuous-mode field quantization.</p>
-            <p>The framework unifies the standard quantum limits of optical frequency division and dual-comb spectroscopy, and identifies resource-efficient routes beyond them using engineered comb states such as squeezed and entangled light.</p>
-            <p class="project-cite"><b>D.-C. Shin</b>, E. Ng, M.-G. Suh, V. Sudhir &middot; <em>arXiv</em>:2605.16702 (2026)</p>
-            <div class="project-links">
-              <a href="https://arxiv.org/abs/2605.16702" target="_blank" rel="noopener">arXiv</a>
-            </div>
-          </div>
-        </article>
+      <div class="container reveal">
+        <h2 class="section-title">Theoretical Tools for Quantum Metrology</h2>
+        <figure class="topic-banner">
+          <img src="assets/img/research/banner-quantum-metrology-theory.svg?v=20261012b" width="1215" height="327" alt="A phase-squeezed state in phase space, and two photons at the sidebands of a laser joined by an infinity-shaped loop to show their entanglement" loading="lazy">
+        </figure>
+        <ul class="paper-list">
+            <li>D.-C. Shin, E. Ng, M.-G. Suh, V. Sudhir, <span class="t">&ldquo;Continuum-field quantum optics of frequency comb metrology,&rdquo;</span> <a href="https://arxiv.org/abs/2605.16702" target="_blank" rel="noopener">arXiv</a> (2026)</li>
+        </ul>
       </div>
     </section>
 
-    <!-- ===================== 3. Frequency comb metrology ===================== -->
     <section class="section" id="frequency-comb">
-      <div class="container">
-        <div class="reveal">
-          <p class="topic-num">03</p>
-          <h2 class="section-title">Frequency Comb Metrology</h2>
-          <p class="topic-lede">Using optical frequency combs to transfer optical-cavity stability to terahertz frequencies and to synchronize independent combs.</p>
-          <figure class="topic-banner">
-            <img src="assets/img/research/banner-frequency-comb.svg" width="1440" height="490" alt="An optical pulse train in time and its Fourier transform, a frequency comb whose lines sit at n times the repetition rate plus the carrier-envelope offset" loading="lazy">
-          </figure>
-        </div>
-
-        <article class="project reveal">
-          <figure class="project-fig">
-            <img src="assets/img/publication_preview/ncomm2023.webp" width="640" height="583" alt="Photonic comb-rooted terahertz synthesis" loading="lazy">
-          </figure>
-          <div class="project-body">
-            <h3 class="project-title">Ultra-stable terahertz synthesis from an optical frequency comb</h3>
-            <p>Precise terahertz spectroscopy, radar and wireless links all need stable terahertz sources. We brought optical-comb stabilization down to the terahertz region: a comb locked to an ultra-low-expansion optical cavity supplies pairs of comb lines that are photomixed to generate frequencies from 0.10 to 1.10&nbsp;THz.</p>
-            <p>At 0.66&nbsp;THz, the frequency instability is 4.4&nbsp;&times;&nbsp;10<sup>&minus;15</sup> at 1&nbsp;s, averaging down to 5.1&nbsp;&times;&nbsp;10<sup>&minus;17</sup> at 65&nbsp;s, with a phase noise of &minus;70&nbsp;dBc/Hz at 1&nbsp;Hz offset.</p>
-            <p class="project-cite"><b>D.-C. Shin</b>, B. S. Kim, H. Jang, Y.-J. Kim, S.-W. Kim &middot; <em>Nature Communications</em> <b>14</b>, 790 (2023)</p>
-            <div class="project-links">
-              <a href="https://doi.org/10.1038/s41467-023-36507-y" target="_blank" rel="noopener">Paper</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <figure class="project-fig">
-            <img src="assets/img/publication_preview/comb-to-comb.webp" width="640" height="450" alt="All-fiber platform for comb-to-comb synchronization" loading="lazy">
-          </figure>
-          <div class="project-body">
-            <h3 class="project-title">Compact all-fiber platform for 1-Hz-linewidth comb synchronization</h3>
-            <p>Dual-comb spectroscopy and ranging require high mutual coherence between two combs, which usually means referencing both to ultra-stable cavity lasers. Instead, we extract two comb lines by injection-locking off-the-shelf diode lasers and use them to phase-lock a second comb, in a compact all-fiber platform.</p>
-            <p>The residual timing jitter between the two pulse trains is 37&nbsp;fs, and multi-heterodyne measurements resolve 1-Hz linewidths between the combs: a mutual coherence time of over 1&nbsp;s, comparable to that of ultra-stable lasers.</p>
-            <p class="project-cite"><b>D.-C. Shin</b><sup>&dagger;</sup>, J. Yang<sup>&dagger;</sup>, D. I. Lee, G. Kang, S.-W. Kim, Y.-J. Kim &middot; <em>Optics &amp; Laser Technology</em> <b>203</b>, 115526 (2026) &middot; <sup>&dagger;</sup>Equal contribution</p>
-            <div class="project-links">
-              <a href="https://doi.org/10.1016/j.optlastec.2026.115526" target="_blank" rel="noopener">Paper</a>
-            </div>
-          </div>
-        </article>
-
-        <div class="related reveal">
-          <h4>Related work</h4>
-          <ul>
-            <li><a href="https://doi.org/10.1038/s41377-022-00940-3" target="_blank" rel="noopener">Frequency comb-to-comb stabilization over a 1.3-km free-space atmospheric optical link</a> <span class="rel-meta">&middot; <em>Light: Sci. Appl.</em> (2022)</span></li>
-            <li><a href="https://photonix.springeropen.com/articles/10.1186/s43074-024-00140-9" target="_blank" rel="noopener">Real-time monitoring of fast gas dynamics with single-molecule resolution by frequency-comb-referenced plasmonic phase spectroscopy</a> <span class="rel-meta">&middot; <em>PhotoniX</em> (2024)</span></li>
-            <li><a href="https://doi.org/10.1038/s41467-026-74193-8" target="_blank" rel="noopener">Nanometre-precision terahertz interferometry for battery electrode metrology</a> <span class="rel-meta">&middot; <em>Nature Communications</em> (2026)</span></li>
-            <li><a href="https://doi.org/10.1038/s41377-026-02417-z" target="_blank" rel="noopener">Hyperspectral dual-comb compressive ghost imaging with deep learning reconstruction</a> <span class="rel-meta">&middot; <em>Light: Sci. Appl.</em> (2026)</span></li>
-          </ul>
-        </div>
+      <div class="container reveal">
+        <h2 class="section-title">Frequency Comb Metrology</h2>
+        <figure class="topic-banner">
+          <img src="assets/img/research/banner-frequency-comb.svg?v=20261012b" width="1293" height="470" alt="An optical pulse train in time and its Fourier transform, a frequency comb whose lines sit at n times the repetition rate plus the carrier-envelope offset" loading="lazy">
+        </figure>
+        <ul class="paper-list">
+            <li>D.-C. Shin, J. Yang, D. I. Lee, G. Kang, S.-W. Kim, Y.-J. Kim, <span class="t">&ldquo;Compact, robust all-fiber platform for 1-Hz-linewidth synchronization of optical frequency combs using single comb line extraction,&rdquo;</span> <a href="https://doi.org/10.1016/j.optlastec.2026.115526" target="_blank" rel="noopener">Optics &amp; Laser Technology</a> (2026)</li>
+            <li>G. Kang, J. Kim, M.-R. Kim, Y. Lee, D.-C. Shin, J. Jeon, H. Kim, D. H. Kim, J. Lee, S. Park, Y.-J. Kim, <span class="t">&ldquo;Nanometre-precision terahertz interferometry for battery electrode metrology,&rdquo;</span> <a href="https://doi.org/10.1038/s41467-026-74193-8" target="_blank" rel="noopener">Nature Communications</a> (2026)</li>
+            <li>M.-G. Suh, D. Dang, M. Gao, Y. Jin, D.-C. Shin, A. Gupta, B. J. Park, C. Uzundal, B. Hu, W. J. M. Kort-Kamp, H. W. H. Lee, <span class="t">&ldquo;Hyperspectral dual-comb compressive ghost imaging with deep learning reconstruction,&rdquo;</span> <a href="https://doi.org/10.1038/s41377-026-02417-z" target="_blank" rel="noopener">Light: Science &amp; Applications</a> (2026)</li>
+            <li>D.-A. Nguyen, D. H. Kim, G. H. Lee, S. Kim, D.-C. Shin, J. Park, H.-J. Choi, S.-W. Kim, S. Kim, Y.-J. Kim, <span class="t">&ldquo;Real-time monitoring of fast gas dynamics with a single-molecule resolution by frequency-comb-referenced plasmonic phase spectroscopy,&rdquo;</span> <a href="https://photonix.springeropen.com/articles/10.1186/s43074-024-00140-9" target="_blank" rel="noopener">PhotoniX</a> (2024)</li>
+            <li>D.-C. Shin, B. S. Kim, H. Jang, Y.-J. Kim, S.-W. Kim, <span class="t">&ldquo;Photonic comb-rooted synthesis of ultra-stable terahertz frequencies,&rdquo;</span> <a href="https://doi.org/10.1038/s41467-023-36507-y" target="_blank" rel="noopener">Nature Communications</a> (2023)</li>
+            <li>J. Yang, D. I. Lee, D.-C. Shin, J. Lee, B. S. Kim, H. J. Kang, Y.-J. Kim, S.-W. Kim, <span class="t">&ldquo;Frequency comb-to-comb stabilization over a 1.3-km free-space atmospheric optical link,&rdquo;</span> <a href="https://doi.org/10.1038/s41377-022-00940-3" target="_blank" rel="noopener">Light: Science &amp; Applications</a> (2022)</li>
+        </ul>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
