@@ -64,3 +64,7 @@ Copy an entry inside the `PUBLICATIONS` array:
   `<link>`/`<script>` tags in `index.html` and `publications.html` so browsers
   fetch the new version instead of a cached one.
 - Dark mode follows the visitor's system setting; the moon/sun button overrides it.
+- Google Analytics: each page's `<head>` carries the GA4 tag with Measurement
+  ID `G-4MK4HQ86RH` (Analytics → property "Github Website" → Admin → Data
+  streams → "Github"). Any new HTML page needs the same snippet — copy it from
+  the top of `index.html` — or its visits won't be counted.
