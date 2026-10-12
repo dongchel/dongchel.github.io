@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/site.css?v=20261012c" />
+  <link rel="stylesheet" href="assets/css/site.css?v=20261012d" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2226%22>🌊</text></svg>">
 
   <!-- research-page styles (built on the site's tokens in site.css) -->
@@ -43,7 +43,7 @@
     .topic-nav{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 0;padding:0;list-style:none}
     .topic-nav a{display:inline-block;font-size:13.5px;font-weight:500;color:var(--ink);border:1px solid var(--line);background:var(--bg-card);padding:6px 13px;border-radius:999px;transition:border-color .2s ease,color .2s ease}
     .topic-nav a:hover{border-color:var(--accent);color:var(--accent)}
-    .topic-lede{font-size:16.5px;line-height:1.65;color:var(--muted);max-width:760px;margin:0 0 26px}
+    .topic-lede{font-size:16.5px;line-height:1.65;color:var(--muted);margin:0 0 26px}
     .topic-banner{margin:24px 0 24px}
     .topic-banner img{width:100%;height:auto}
     @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .topic-banner img{filter:invert(1) hue-rotate(180deg)}}
@@ -52,6 +52,7 @@
     .paper-list li{font-size:15px;line-height:1.55;color:var(--muted);padding-left:16px;position:relative}
     .paper-list li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
     .paper-list .t{color:var(--ink)}
+    .paper-list b{color:var(--ink)}
     .paper-list a{color:var(--accent);font-weight:500}
     .paper-list a:hover{text-decoration:underline}
     @media(max-width:440px){.header-right{gap:8px}.nav{gap:9px}.nav-link{font-size:12px}.brand-name{font-size:14px}.theme-toggle{width:30px;height:30px}}
@@ -102,8 +103,8 @@
         </figure>
         <p class="topic-lede">Whether gravity obeys quantum mechanics remains an open question, and testing it requires an object massive enough to gravitate yet prepared in a quantum state. I work toward this goal by cooling a centimeter-scale torsional oscillator toward its quantum ground state with quantum-limited optical measurement and feedback. Moreover, such a system probes quantum mechanics at unprecedented mass scales and senses forces and displacements at the limit set by quantum noise.</p>
         <ul class="paper-list">
-            <li>D.-C. Shin, T. M. Hayward, D. Fife, R. Menon, V. Sudhir, <span class="t">&ldquo;Active laser cooling of a centimeter-scale torsional oscillator,&rdquo;</span> <a href="https://doi.org/10.1364/OPTICA.548098" target="_blank" rel="noopener">Optica</a> (2025)</li>
-            <li>D. Fife, D.-C. Shin, V. Sudhir, <span class="t">&ldquo;Temperature stabilization of a lab space at 10&nbsp;mK-level over a day,&rdquo;</span> <a href="https://doi.org/10.1063/5.0213133" target="_blank" rel="noopener">Rev. Sci. Instrum.</a> (2024)</li>
+            <li><b>D.-C. Shin</b>, T. M. Hayward, D. Fife, R. Menon, V. Sudhir, <span class="t">&ldquo;Active laser cooling of a centimeter-scale torsional oscillator,&rdquo;</span> <a href="https://doi.org/10.1364/OPTICA.548098" target="_blank" rel="noopener">Optica</a> (2025)</li>
+            <li>D. Fife, <b>D.-C. Shin</b>, V. Sudhir, <span class="t">&ldquo;Temperature stabilization of a lab space at 10&nbsp;mK-level over a day,&rdquo;</span> <a href="https://doi.org/10.1063/5.0213133" target="_blank" rel="noopener">Rev. Sci. Instrum.</a> (2024)</li>
         </ul>
       </div>
     </section>
@@ -116,7 +117,7 @@
         </figure>
         <p class="topic-lede">Real optical measurements use light spread across many frequencies and spatial modes, so their quantum noise must be understood within multimode quantum optics. I develop first-principles theory that predicts the fundamental limits of practical measurement schemes and shows how to surpass them. In this picture, engineered multimode quantum states of light, such as squeezed and entangled light, become new metrological resources.</p>
         <ul class="paper-list">
-            <li>D.-C. Shin, E. Ng, M.-G. Suh, V. Sudhir, <span class="t">&ldquo;Continuum-field quantum optics of frequency comb metrology,&rdquo;</span> <a href="https://arxiv.org/abs/2605.16702" target="_blank" rel="noopener">arXiv</a> (2026)</li>
+            <li><b>D.-C. Shin</b>, E. Ng, M.-G. Suh, V. Sudhir, <span class="t">&ldquo;Continuum-field quantum optics of frequency comb metrology,&rdquo;</span> <a href="https://arxiv.org/abs/2605.16702" target="_blank" rel="noopener">arXiv</a> (2026)</li>
         </ul>
       </div>
     </section>
@@ -129,12 +130,12 @@
         </figure>
         <p class="topic-lede">An optical frequency comb links optical frequencies to the microwave and terahertz domains, so the stability of the best optical references can be carried into other frequency bands and instruments. I use combs to synthesize ultra-stable terahertz signals, to synchronize independent combs at the hertz level, and to build precision measurements on them.</p>
         <ul class="paper-list">
-            <li>D.-C. Shin, J. Yang, D. I. Lee, G. Kang, S.-W. Kim, Y.-J. Kim, <span class="t">&ldquo;Compact, robust all-fiber platform for 1-Hz-linewidth synchronization of optical frequency combs using single comb line extraction,&rdquo;</span> <a href="https://doi.org/10.1016/j.optlastec.2026.115526" target="_blank" rel="noopener">Optics &amp; Laser Technology</a> (2026)</li>
-            <li>G. Kang, J. Kim, M.-R. Kim, Y. Lee, D.-C. Shin, J. Jeon, H. Kim, D. H. Kim, J. Lee, S. Park, Y.-J. Kim, <span class="t">&ldquo;Nanometre-precision terahertz interferometry for battery electrode metrology,&rdquo;</span> <a href="https://doi.org/10.1038/s41467-026-74193-8" target="_blank" rel="noopener">Nature Communications</a> (2026)</li>
-            <li>M.-G. Suh, D. Dang, M. Gao, Y. Jin, D.-C. Shin, A. Gupta, B. J. Park, C. Uzundal, B. Hu, W. J. M. Kort-Kamp, H. W. H. Lee, <span class="t">&ldquo;Hyperspectral dual-comb compressive ghost imaging with deep learning reconstruction,&rdquo;</span> <a href="https://doi.org/10.1038/s41377-026-02417-z" target="_blank" rel="noopener">Light: Science &amp; Applications</a> (2026)</li>
-            <li>D.-A. Nguyen, D. H. Kim, G. H. Lee, S. Kim, D.-C. Shin, J. Park, H.-J. Choi, S.-W. Kim, S. Kim, Y.-J. Kim, <span class="t">&ldquo;Real-time monitoring of fast gas dynamics with a single-molecule resolution by frequency-comb-referenced plasmonic phase spectroscopy,&rdquo;</span> <a href="https://photonix.springeropen.com/articles/10.1186/s43074-024-00140-9" target="_blank" rel="noopener">PhotoniX</a> (2024)</li>
-            <li>D.-C. Shin, B. S. Kim, H. Jang, Y.-J. Kim, S.-W. Kim, <span class="t">&ldquo;Photonic comb-rooted synthesis of ultra-stable terahertz frequencies,&rdquo;</span> <a href="https://doi.org/10.1038/s41467-023-36507-y" target="_blank" rel="noopener">Nature Communications</a> (2023)</li>
-            <li>J. Yang, D. I. Lee, D.-C. Shin, J. Lee, B. S. Kim, H. J. Kang, Y.-J. Kim, S.-W. Kim, <span class="t">&ldquo;Frequency comb-to-comb stabilization over a 1.3-km free-space atmospheric optical link,&rdquo;</span> <a href="https://doi.org/10.1038/s41377-022-00940-3" target="_blank" rel="noopener">Light: Science &amp; Applications</a> (2022)</li>
+            <li><b>D.-C. Shin</b>, J. Yang, D. I. Lee, G. Kang, S.-W. Kim, Y.-J. Kim, <span class="t">&ldquo;Compact, robust all-fiber platform for 1-Hz-linewidth synchronization of optical frequency combs using single comb line extraction,&rdquo;</span> <a href="https://doi.org/10.1016/j.optlastec.2026.115526" target="_blank" rel="noopener">Optics &amp; Laser Technology</a> (2026)</li>
+            <li>G. Kang, J. Kim, M.-R. Kim, Y. Lee, <b>D.-C. Shin</b>, J. Jeon, H. Kim, D. H. Kim, J. Lee, S. Park, Y.-J. Kim, <span class="t">&ldquo;Nanometre-precision terahertz interferometry for battery electrode metrology,&rdquo;</span> <a href="https://doi.org/10.1038/s41467-026-74193-8" target="_blank" rel="noopener">Nature Communications</a> (2026)</li>
+            <li>M.-G. Suh, D. Dang, M. Gao, Y. Jin, <b>D.-C. Shin</b>, A. Gupta, B. J. Park, C. Uzundal, B. Hu, W. J. M. Kort-Kamp, H. W. H. Lee, <span class="t">&ldquo;Hyperspectral dual-comb compressive ghost imaging with deep learning reconstruction,&rdquo;</span> <a href="https://doi.org/10.1038/s41377-026-02417-z" target="_blank" rel="noopener">Light: Science &amp; Applications</a> (2026)</li>
+            <li>D.-A. Nguyen, D. H. Kim, G. H. Lee, S. Kim, <b>D.-C. Shin</b>, J. Park, H.-J. Choi, S.-W. Kim, S. Kim, Y.-J. Kim, <span class="t">&ldquo;Real-time monitoring of fast gas dynamics with a single-molecule resolution by frequency-comb-referenced plasmonic phase spectroscopy,&rdquo;</span> <a href="https://photonix.springeropen.com/articles/10.1186/s43074-024-00140-9" target="_blank" rel="noopener">PhotoniX</a> (2024)</li>
+            <li><b>D.-C. Shin</b>, B. S. Kim, H. Jang, Y.-J. Kim, S.-W. Kim, <span class="t">&ldquo;Photonic comb-rooted synthesis of ultra-stable terahertz frequencies,&rdquo;</span> <a href="https://doi.org/10.1038/s41467-023-36507-y" target="_blank" rel="noopener">Nature Communications</a> (2023)</li>
+            <li>J. Yang, D. I. Lee, <b>D.-C. Shin</b>, J. Lee, B. S. Kim, H. J. Kang, Y.-J. Kim, S.-W. Kim, <span class="t">&ldquo;Frequency comb-to-comb stabilization over a 1.3-km free-space atmospheric optical link,&rdquo;</span> <a href="https://doi.org/10.1038/s41377-022-00940-3" target="_blank" rel="noopener">Light: Science &amp; Applications</a> (2022)</li>
         </ul>
       </div>
     </section>
