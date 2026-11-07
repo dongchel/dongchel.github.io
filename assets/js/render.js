@@ -1,1 +1,127 @@
-function mdInline(e){return e.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>').replace(/\*\*([^*]+)\*\*/g,"<b>$1</b>").replace(/_([^_]+)_/g,"<em>$1</em>").replace(/\^dagger\^/g,"<sup>&dagger;</sup>").replace(/\^([^^]+)\^/g,"<sup>$1</sup>")}function authorsUseMarkers(e){return/\^(\*|dagger)\^/.test(e)}function fmtDate(e){const[t,n,a]=e.split("-");return`${t}.${n}.${a}`}function newsItem(e){const t=document.createElement("li");return t.className="news-item",t.innerHTML=`\n    <span class="news-date">${fmtDate(e.date)}</span>\n    <span class="news-tag">${e.tag}</span>\n    <p class="news-body">${mdInline(e.body)}</p>\n  `,t}function pubCard(e){const t=document.createElement("div");t.className="pub-card";const n=e.links&&e.links[0]&&e.links[0].url||"#",a=(e.links||[]).map(e=>`<a href="${e.url}" target="_blank" rel="noopener">${e.label}</a>`).join(""),s=authorsUseMarkers(e.authors)?`<p class="pub-legend">${e.authors.includes("^*^")?"* corresponding author":""}${e.authors.includes("^*^")&&e.authors.includes("^dagger^")?" &middot; ":""}${e.authors.includes("^dagger^")?"&dagger; co-first author":""}</p>`:"";return t.innerHTML=`\n    <div class="pub-thumb"><img src="${e.preview}" alt="" width="240" height="176" loading="lazy" decoding="async"></div>\n    <div>\n      <div class="pub-year">${e.year} &middot; ${e.venue}</div>\n      <h3 class="pub-title"><a href="${n}" target="_blank" rel="noopener">${mdInline(e.title)}</a></h3>\n      <p class="pub-authors">${mdInline(e.authors)}</p>\n      ${s}\n      <div class="pub-links">${a}</div>\n    </div>\n  `,t}function sortedNews(){return[...NEWS].sort((e,t)=>e.date<t.date?1:-1)}function sortedPubs(){return[...PUBLICATIONS].sort((e,t)=>t.year-e.year)}const NEWS_VISIBLE=5;document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("news-list");if(e){const t=sortedNews().map(newsItem);if(t.forEach((t,n)=>{n>=NEWS_VISIBLE&&(t.hidden=!0),e.appendChild(t)}),t.length>NEWS_VISIBLE){const n=document.createElement("button");n.type="button",n.className="news-more",n.setAttribute("aria-expanded","false");const a=()=>`Show all ${t.length} updates \u2193`;n.textContent=a(),n.addEventListener("click",()=>{const e="true"!==n.getAttribute("aria-expanded");t.forEach((t,n)=>{n>=NEWS_VISIBLE&&(t.hidden=!e)}),n.setAttribute("aria-expanded",String(e)),n.textContent=e?"Show fewer \u2191":a()}),e.after(n)}}const t=document.getElementById("selected-pub-list");t&&sortedPubs().filter(e=>e.selected).forEach(e=>t.appendChild(pubCard(e)));const n=document.getElementById("pub-year-groups");if(n){const e={};sortedPubs().forEach(t=>{(e[t.year]=e[t.year]||[]).push(t)}),Object.keys(e).sort((e,t)=>t-e).forEach(t=>{const a=document.createElement("div");a.className="pub-year-group reveal";const s=document.createElement("h2");s.className="pub-year-head",s.textContent=t,a.appendChild(s);const r=document.createElement("div");r.className="pub-list",e[t].forEach(e=>r.appendChild(pubCard(e))),a.appendChild(r),n.appendChild(a)})}document.dispatchEvent(new Event("content-rendered"))});
+// render.js — turns data.js into DOM. No build step: edit data.js, refresh.
+
+function mdInline(str) {
+  // very small markdown subset: **bold**, _italic_, [text](url), ^*^ / ^dagger^ superscript
+  return str
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+    .replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>")
+    .replace(/_([^_]+)_/g, "<em>$1</em>")
+    .replace(/\^dagger\^/g, "<sup>&dagger;</sup>")
+    .replace(/\^([^^]+)\^/g, "<sup>$1</sup>");
+}
+
+// does an authors string use a ^*^ or ^dagger^ marker?
+function authorsUseMarkers(authors) {
+  return /\^(\*|dagger)\^/.test(authors);
+}
+
+function fmtDate(iso) {
+  const [y, m, d] = iso.split("-");
+  return `${y}.${m}.${d}`;
+}
+
+const NEWS_VISIBLE = 5; // items shown before "Show all"
+
+function newsItem(item) {
+  const el = document.createElement("li");
+  el.className = "news-item";
+  el.innerHTML = `
+    <span class="news-date">${fmtDate(item.date)}</span>
+    <span class="news-tag">${item.tag}</span>
+    <p class="news-body">${mdInline(item.body)}</p>
+  `;
+  return el;
+}
+
+function pubCard(pub) {
+  const el = document.createElement("div");
+  el.className = "pub-card";
+  const primaryUrl = (pub.links && pub.links[0] && pub.links[0].url) || "#";
+  const linksHtml = (pub.links || [])
+    .map((l) => `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`)
+    .join("");
+  const legend = authorsUseMarkers(pub.authors)
+    ? `<p class="pub-legend">${pub.authors.includes("^*^") ? "* corresponding author" : ""}${pub.authors.includes("^*^") && pub.authors.includes("^dagger^") ? " &middot; " : ""}${pub.authors.includes("^dagger^") ? "&dagger; co-first author" : ""}</p>`
+    : "";
+  el.innerHTML = `
+    <div class="pub-thumb"><img src="${pub.preview}" alt="" width="240" height="176" loading="lazy" decoding="async"></div>
+    <div>
+      <div class="pub-year">${pub.year} &middot; ${pub.venue}</div>
+      <h3 class="pub-title"><a href="${primaryUrl}" target="_blank" rel="noopener">${mdInline(pub.title)}</a></h3>
+      <p class="pub-authors">${mdInline(pub.authors)}</p>
+      ${legend}
+      <div class="pub-links">${linksHtml}</div>
+    </div>
+  `;
+  return el;
+}
+
+function sortedNews() {
+  return [...NEWS].sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+function sortedPubs() {
+  return [...PUBLICATIONS].sort((a, b) => b.year - a.year);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // ---- homepage: news list (first NEWS_VISIBLE, rest behind "Show all") ----
+  const list = document.getElementById("news-list");
+  if (list) {
+    const items = sortedNews().map(newsItem);
+    items.forEach((el, i) => {
+      if (i >= NEWS_VISIBLE) el.hidden = true;
+      list.appendChild(el);
+    });
+    if (items.length > NEWS_VISIBLE) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "news-more";
+      btn.setAttribute("aria-expanded", "false");
+      const label = () => `Show all ${items.length} updates ↓`;
+      btn.textContent = label();
+      btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") !== "true";
+        items.forEach((el, i) => { if (i >= NEWS_VISIBLE) el.hidden = !open; });
+        btn.setAttribute("aria-expanded", String(open));
+        btn.textContent = open ? "Show fewer ↑" : label();
+      });
+      list.after(btn);
+    }
+  }
+
+  // ---- homepage: selected publications (every selected:true, newest first) ----
+  const selectedWrap = document.getElementById("selected-pub-list");
+  if (selectedWrap) {
+    sortedPubs()
+      .filter((p) => p.selected)
+      .forEach((p) => selectedWrap.appendChild(pubCard(p)));
+  }
+
+  // ---- publications.html: full list grouped by year ----
+  const fullWrap = document.getElementById("pub-year-groups");
+  if (fullWrap) {
+    const byYear = {};
+    sortedPubs().forEach((p) => {
+      (byYear[p.year] = byYear[p.year] || []).push(p);
+    });
+    Object.keys(byYear)
+      .sort((a, b) => b - a)
+      .forEach((year) => {
+        const group = document.createElement("div");
+        group.className = "pub-year-group reveal";
+        const head = document.createElement("h2");
+        head.className = "pub-year-head";
+        head.textContent = year;
+        group.appendChild(head);
+        const list = document.createElement("div");
+        list.className = "pub-list";
+              byYear[year].forEach((p) => list.appendChild(pubCard(p)));
+        group.appendChild(list);
+        fullWrap.appendChild(group);
+      });
+  }
+
+  // let site.js's reveal-on-scroll pick up anything just inserted
+  document.dispatchEvent(new Event("content-rendered"));
+});
